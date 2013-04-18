@@ -12,6 +12,8 @@
 
 {{ include file="_tpl/article-cont.tpl" }}
 
+{{ include file="_tpl/article-rating.tpl" }}
+
 {{ include file="_tpl/article-comments.tpl" }}
                               
       </div><!-- /#maincol -->
