@@ -65,7 +65,13 @@
 
 {{ /if }}{{* end of $gimme->article->content_accessible *}}
 
-{{* here we show short bio of article authors *}}
+{{* here we include debate voting tool, if article type is 'debate' *}}
+{{ if $gimme->article->type_name == "debate" }}
+{{ include file="_tpl/debate-voting.tpl" }}
+
+{{ else }}
+
+{{* here we show short bio of article authors for article of non-debate type *}}
 {{ list_article_authors }} 
 {{ if $gimme->current_list->at_beginning }}            
             <div id="author-box">
@@ -86,6 +92,8 @@
             </div><!-- /#author-box -->
 {{ /if }}
 {{ /list_article_authors }}            
+
+{{ /if }}
                 
 {{* related content *}}                
             <div id="related">

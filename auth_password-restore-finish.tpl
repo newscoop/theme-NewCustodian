@@ -15,7 +15,7 @@
     </fieldset>
     <fieldset class="fixBackground background-block login">
         <dl>
-                {{ $form->password->setLabel("Neues Passwort")->removeDecorator('Errors') }}
+                {{ $form->password->setLabel("{{ #newPassword# }}")->removeDecorator('Errors') }}
                 {{ if $form->password->hasErrors() }}
                 <dt class="info-block">&nbsp;</dt>
                 <dd class="info-block">

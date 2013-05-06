@@ -18,7 +18,7 @@ $(document).ready(function(){
 <h3>{{ #dynamicMap# }}</h3>
 <div class="eightcol">
 
-{{* All possible constraints for setting the map you can see here:
+{{* All possible constraints for setting the map can seen here:
 https://wiki.sourcefabric.org/display/CS/Dynamic+maps+-+Constraints *}}
 {{ set_map
     label="{{ #latestLocations# }}"
