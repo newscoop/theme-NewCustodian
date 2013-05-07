@@ -1,6 +1,6 @@
 <h1>{{ #section# }} {{ $gimme->section->name }}</h1>
 
-{{ list_articles length="5" ignore_issue="true" }}
+{{ list_articles length="5" ignore_issue="true" constraints="type not poll" }}
 
           <section class="art-item clearfix">
                 <header>
