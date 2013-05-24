@@ -1832,12 +1832,9 @@ aside .profile dt, aside .profile dd,
    Article rating
    ========================================================================== */
 .rate_widget {
-    border:     none;
-    overflow:   visible;
-    padding:    10px;
-    position:   relative;
-    width:      180px;
-    height:     30px;
+    border: none;
+    overflow: visible;
+    position: relative;
 }
 .ratings_stars {
     background: url('../_img/rating/star_empty.png') no-repeat;
@@ -1854,26 +1851,28 @@ aside .profile dt, aside .profile dd,
 }
  
 .total_votes {
-    background: #eaeaea;
-    top: 58px;
-    left: 0;
-    padding: 5px;
-    position:   absolute;
+    margin-top: -2px;
+    float: left;
+    display: inline-block;
 }
 .article_rating {
-    font: 10px verdana, sans-serif;
-    margin: 0px 0px 50px 0px;
-    width: 180px;
+    font: 21px Arial, Helvetica, sans-serif;
+    width: 100%;
+    float: left;
+    padding: 10px 0px;
 }
+  .article_rating h3 {
+    display: inline-block;
+    float: left;
+    margin-right: 7px;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
 
 .rating_error {
-    top: 75px;
-    left: 0;
-    padding: 5px;
-    position: absolute;
-    color: red;
-    font-weight: bold;
-    width: 200px;
+    margin-top: -2px;
+    float: left;
+    display: inline-block;
 }
 
 .stars {
@@ -1881,6 +1880,7 @@ padding: 0;
 margin: 0 4px 0 0;
 list-style-type: none;
 display: inline-block;
+float: left;
 }
 
 /* =============================================================================
