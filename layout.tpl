@@ -1,5 +1,3 @@
-{{ config_load file="{{ $gimme->language->english_name }}.conf" }}
-
 {{ include file="_tpl/_html-head.tpl" }}
 
 <body>
@@ -20,14 +18,14 @@
 
 {{ if !($userindex == 1) }}                  
 {{ if $user->isAuthor() }}
-<h3>{{ #about# }} {{ $user->first_name }}</h3>
+<h3>About {{ $user->first_name }}</h3>
 <dl class="profile">
     {{ foreach $profile as $label => $value }} 
     {{ if !empty($value) }}
     
     {{ if $label == "website" }}
       <dt>{{ $label }}:</dt>
-      <dd><a rel="nofollow" href="http://{{ $profile['website']|escape:url }}">{{ $profile['website']|escape }}</a></dd>
+      <dd><a rel="nofollow" href="//{{ $profile['website']|escape:url }}">{{ $profile['website']|escape }}</a></dd>
     {{ else }}       
        
     {{ if !($label == "bio") }}<dt>{{ $label }}:</dt>{{ /if }}
