@@ -19,6 +19,7 @@
                 {{ if $gimme->article->type_name == "news" }}
                 {{ include file="_tpl/img/img_600x400.tpl" }}
                 {{ /if }}
+                {{ count }}
                 <div class="clearfix">{{ include file="_tpl/_edit-article.tpl" }}{{ $gimme->article->full_text }}</div>
             </article>
 
