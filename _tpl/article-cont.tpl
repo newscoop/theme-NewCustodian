@@ -17,6 +17,7 @@
 {{ if $gimme->article->content_accessible }}                
                 
                 {{ if $gimme->article->type_name == "news" }}
+                <!-- if you want to use responsive images use {{ include file="_tpl/img/img_picturefill.tpl" }} -->
                 {{ include file="_tpl/img/img_600x400.tpl" }}
                 {{ /if }}
                 <div class="clearfix">{{ include file="_tpl/_edit-article.tpl" }}{{ $gimme->article->full_text }}</div>
