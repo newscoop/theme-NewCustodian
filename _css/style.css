@@ -1121,6 +1121,9 @@ form input#article_comment_submit {
   margin-left: 0;
 }
 
+.cs_fl_right { float:right; margin-left: 20px;} 
+.cs_fl_left { float:left; margin-right: 20px;}
+
 /* 
   + Pagination / Tab navigation
   -------------------------------- */
