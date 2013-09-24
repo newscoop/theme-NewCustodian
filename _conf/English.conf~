@@ -174,7 +174,6 @@ about = "About"
 gender = "Gender"
 organisation = "Organisation"
 birthday = "Date of birth"
-website = "Website"
 
 # register_after.tpl
 registerYourself = "Register yourself"
