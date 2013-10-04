@@ -1,0 +1,223 @@
+### French language template strings for New Custodian 4.1.1 ### 
+### Contributed by Jean-Pierre Druffin, thanks! ###
+
+# global strings
+publishedOn:"Publié le"
+in:"dans"
+by:"Par"
+and:"et"
+commentS:"commentaire(s)"
+previous:"Précédent"
+next:"Suivant"
+photo:"photo:"
+
+# _tpl/_edit-article.tpl
+editArticle:"Editer l'article"
+
+# _tpl/front-dynamicmap.tpl
+dynamicMap:"Carte dynamique"
+latestLocations:"Derniers lieux"
+articlesLatestLocations:"Articles pour les derniers lieux"
+
+# _tpl/front-highlights.tpl
+highlights:"Temps forts"
+
+# _tpl/front-morenews.tpl
+moreNews:"Autres nouvelles"
+
+# _tpl/header.tpl
+archives:"Archives"
+keywords:"mots-clés"
+navigation:"Navigation"
+home:"Accueil"
+viewAllPosts:"Voir tous les posts sous"
+community:"Communauté"
+youAreHere:"Vous êtes ici:"
+search:"Recherche"
+topic:"Sujet"
+errorPage:"page erreur" 
+
+# _tpl/sidebar-community-feed.tpl
+communityFeed:"Diffusion communautaire"
+registered:"enregistré"
+newCommentOn:"Nouveau commentaire:"
+
+# _tpl/sidebar-loginbox.tpl
+welcome:"Bienvenue,"
+logout:"déconnexion"
+loginGetInvolved:"Connectez-vous et soyez impliqué"
+
+# _tpl/sidebar-most.tpl
+recentlyCommented:"Commentés récemment"
+mostRead:"Les plus lus"
+recentlyCommentedArticles:"Voici les articles commentés récemment"
+anonymous:"(non enregistré)"
+mostOpenedArticles:"Voici les derniers articles les plus lus dans la dernière publication"
+
+# _tpl/archive-cont.tpl
+issuesArchive:"Archives"
+
+#_tpl/article-aside.tpl
+articleGallery:"Galerie"
+map:"Carte"
+listen:"Ecouter"
+downloadAudioFile:"Télécharger un fichier audio"
+watch:"Regarder"
+download:"Télécharger"
+file:"fichier"
+fileOfType:"Fichier de type:"
+aboutAuthor:"Au sujet de l'auteur"
+relatedArticles:"Articles liés"
+moreInThisSection:"Autres articles"
+
+#_tpl/article-comments.tpl
+responsesTo:"Réponse(s) à"
+commentNotAccepted:"Votre commentaire n'a pas été accepté."
+commentSentApproval:"Votre commentaire est envoyé pour approbation."
+leaveReply:"Laisser une réponse"
+submit:"soumettre"
+comment:"Commentaire"
+enterCode:"entrez le code:"
+commentsLockedDisabled:"Commentaires bloqués / désactivés pour cet article."
+notLoggedInMessage:"Vous devez être enregistré pour commenter les articles et envoyer des messages directement à l'équipe éditoriale. Connectez-vous ou créez un compte utilisateur gratuit."
+nameRequired:"Nom (requis)"
+emailRequired:"Email (ne sera pas publié) (requis)"
+
+#_tpl/article-cont.tpl
+topicS:"Sujet(s):"
+tweet:"Tweet"
+locationS:"Lieu(x):"
+
+#_tpl/article-icons.tpl
+articleLocked:"Article bloqué"
+hasPhotoGallery:"Cet article a une galerie photo"
+hasAudioAttachment:"Cet article a une fichier audio joint"
+hasVideoAttachment:"Cet article a un fichier vidéo joint"
+infoOnLockedArticles:"Cet article est bloqué et n'est accessible qu'aux utilisateurs <mark>enregistrés</mark> et <mark>connectés</mark>, désolé !"
+
+#_tpl/article-rating.tpl
+articleRating:"Notation article:"
+voteData:"données de vote"
+voteS:"vote(s)."
+averageRating:"Notation moyenne:"
+
+# _tpl/footer.tpl
+designedBy:"Conçu par"
+lastUpdate:"Dernière mise à jour:"
+
+# _tpl/relative_date.tpl
+year:"année"
+years:"années"
+month:"mois"
+months:"mois"
+day:"jour"
+days:"jours"
+hours:"h"
+minutes:"min"
+seconds:"sec"
+ago:"passés"
+
+# _tpl/search-cont.tpl
+searchResults:"résultats de la recherche"
+noSearchResults:"Aucun résultat trouvé pour votre demande."
+
+# _tpl/section-cont.tpl
+section:"Section:"
+
+# _tpl/topic-cont.tpl
+topic:"Sujet:"
+
+# _tpl/user-content.tpl
+articles:"Articles"
+comments:"Commentaires"
+onArticle:"Sur l'article"
+
+# 404.tpl
+sorryNoFound:"Désolé, la page demandée n'a pas été trouvée."
+
+# auth_index.tpl
+Login:"Connexion"
+loginFailed:"Connexion échouée"
+somethingWrong:"Soit votre email, soit votre mot de pas est erroné."
+tryAgain:"Ré-essayer SVP"
+forgotPassword:"Mot de passe oublié ?"
+Register:"Enregistrement"
+
+# auth_password-restore.tpl
+resetPassword:"Restaurer le mot de passe"
+emailNotCorrect:"E-mail n'est pas correct"
+maybeYouRegistered:"Peut-être êtes-vous enregistré sous"
+withAnotherEmail:"avec un autre compte email ?"
+requestNewPassword:"Demande de nouveau mot de passe"
+
+# auth_password-restore-after.tpl
+userAccount:"Compte utilisateur"
+weSentEmail:"Nous vous avons envoyé un email."
+pleaseCheckInbox:"SVP, contrôlez votre boîte mail et cliquez sur le lien pour restaurer le mot de passe."
+
+# auth_password-restore-finish.tpl
+setNewPassword:"Valider le nouveau mot de passe"
+newPassword:"Nouveau mot de passe"
+couldNotChange:"Votre mot de passe ne peut pas être modifié. Suivez les instructions et ré-essayez."
+enterNewPassword:"Saisissez votre nouveau mot de passe (minimum 6 caractères)"
+doesNotMatch:"La confirmation de votre mot de passe ne correspond pas avec la première saisie."
+savePassword:"Sauvegarder le mot de passe"
+
+# email_confirm.tpl
+mailHello:"Hello,"
+mailAutomaticalMessage:"Ceci est un email généré automatiquement par"
+mailPleaseConfirm:"Confirmez votre adresse email en cliquant sur le lien ci-dessous:"
+mailOtherwise:"Autrement, si cette demande ne vient pas de vous, ignorez cet email."
+mailThanks:"Merci !"
+
+# layout.tpl
+about:"Au sujet de"
+
+# register_after.tpl
+registerYourself:"Enregistrez-vous"
+confirmationSent:"Confirmation a été envoyée."
+followEmailSteps:"Suivez les étapes que vous trouverez dans l'email."
+thanksForRegistering:"Merci pour vous être enregistré."
+
+# register_confirm.tpl
+registerConfirm:"Confirmation d'enregistrement"
+pleaseFill:"Saisissez vos données"
+
+# register_index.tpl
+register:"Enregistrement"
+
+# register_social.tpl
+hello:"Hello,"
+fillYourData:"Vous êtes ici pour la première fois. Remplissez vos données pour terminer l'enregistrement."
+
+# user_index.tpl
+userIndex:"Index utilisateurs"
+search1:"recherche"
+active:"Active"
+all:"Tous"
+editors:"Editeurs"
+posts:"posts"
+
+# user_profile.tpl
+editProfile:"Editer le profil"
+editorProfile:"Profil de l'éditeur"
+userProfile:"Profile de l'utilisateur"
+numberOfPosts:"Nombre de posts:"
+
+# _tpl/debate-voting.tpl
+debateVoting:"Vote sur le débat"
+changeYourMind:"Vous pouvez changer d'avis autant de fois que vous voulez jusqu'à l'expiration du débat, si des arguments de l'autre bord sont plus covaincants."
+debateClosed:"Le débat est clos. Le résultat final est publié."
+pleaseLoginVote:"Connectez-vous pour voter."
+
+# _tpl/article-debate.tpl
+proArgumentsBy:"Les arguments POUR par:"
+contraArgumentsBy:"Les arguments CONTRE par:"
+
+#[poll]
+# _tpl/sidebar-poll.tpl
+pollTitle:"Sondage"
+thankYouPoll:"Merci de participer à ce sondage!"
+alreadyVoted:"Vous avez déjà voté"
+numberOfVotes:"Nombre de votes:"
+pollButton:"Voter maintenant"
