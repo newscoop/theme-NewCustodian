@@ -1,5 +1,4 @@
 {{ include file="_tpl/sidebar-loginbox.tpl" }} 
-
 {{* Only if user has the right to read the article, aside elements will be shown. The same for article content. *}}
 {{ if $gimme->article->content_accessible }}
 
@@ -72,15 +71,26 @@
 {{ else }}
 
 {{* here we show short bio of article authors for article of non-debate type *}}
+{{assign var="listAuthor" value=0}}
 {{ list_article_authors }} 
 {{ if $gimme->current_list->at_beginning }}            
             <div id="author-box">
               <h3>{{ #aboutAuthor# }}</h3>
 {{ /if }}              
                 <article class="clearfix">
+                  {{assign var="listAuthor" value=1}}
                 	<figure class="threecol">
+
                     	<img rel="resizable" style="max-width:100%;" alt="{{ $gimme->author->name }}" src="{{ $gimme->author->picture->imageurl }}" />
                 	</figure>
+
+                  {{ if $listAuthor==0}} 
+                            <figure>
+
+                                    <img rel="resizable"  alt="{{ $gimme->author->name }}" src="{{ url static_file='_img/noAuthor.jpg' }}" />
+                                </figure>  
+
+                            {{ /if }}
                     <div class="ninecol last">
                 	<h4>{{ if $gimme->author->user->defined }}<a href="{{ $view->url(['username' => $gimme->author->user->uname], 'user') }}">{{ /if }}{{ $gimme->author->name }}{{ if $gimme->author->user->defined }}</a>{{ /if }}</h4>
                   

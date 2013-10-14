@@ -66,8 +66,10 @@
 <dl class="profile">
 
 
-    {{ foreach $profile as $label => $value }} 
+    {{* foreach $profile as $label => $value }} 
     {{ if !empty($value) }}
+
+
     
     {{ if $label == "website" }}
       <dt>{{ $label }}:</dt>
@@ -77,7 +79,14 @@
     <dd>{{ $value|default:"n/a" }}</dd>
     {{ /if }}
     {{ /if }}
-    {{ /foreach }}
+    {{ /foreach *}}
+
+    <dd>{{ $profile['bio'] }}</dd>
+    <dd><b>{{ #birthday# }}:</b> {{ $profile['birth_date'] }}</dd>
+   <dd><b>{{ #gender# }}:</b> {{ $profile['gender'] }}</dd>
+   <dd><b>{{ #geolocation# }}:</b> {{ $profile['geolocation'] }}</dd>
+    <dd><b>{{ #organisation# }}:</b> {{ $profile['organisation']}}</dd>
+    <dd><b>{{ #website# }}:</b> <a class="link-color" href="{{ $profile['website']}}" target="_blank" rel="nofollow">{{ $profile['website']|escape}}</a></dd>
 </dl>
 
 </div>
@@ -86,3 +95,5 @@
 {{ /if }}
 
 {{/block}}
+
+
