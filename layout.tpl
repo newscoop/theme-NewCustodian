@@ -20,34 +20,57 @@
 
 {{ if !($userindex == 1) }}                  
 {{ if $user->isAuthor() }}
-<h3>{{ #about# }} {{ $user->first_name }}</h3>
+
+<h3>About
+    {{ if $profile['first_name_public'] eq 1 }}
+        {{ $user->first_name }}
+    {{ /if }}
+    {{ if $profile['last_name_public'] eq 1 }}
+        {{ $user->last_name }}
+    {{ /if }}
+</h3>
 <dl class="profile">
-	
-	
-	
-
-
-    {{* foreach $profile as $label => $value }} 
+    {{ foreach $profile as $label => $value }}
     {{ if !empty($value) }}
-    
-    {{ if $label == "website" }}
-      <dt>{{ $label }}:</dt>
-      <dd><a rel="nofollow" href="http://{{ $profile['website']|escape:url }}">{{ $profile['website']|escape }}</a></dd>
-    {{ else }}       
        
-    {{ if !($label == "bio") }}<dt>{{ $label }}:</dt>{{ /if }}
-    <dd>{{ $value|default:"n/a" }}</dd>
-    
+        {{ if $label == "bio" }}
+                <dt style="margin-left:5px;">Bio:</dt><dd style="overflow:hidden;">{{ $value|default:"n/a" }}</dd>
+        {{ /if }}
+        {{ if $label == "birth_date" }}
+            <dt>Birth Date:</dt><dd>{{ $profile['birth_date'] }}</dd>
+        {{ /if }}
+        {{ if $label == "geolocation" }}
+            <dt>Location:</dt><dd>{{ $profile['geolocation'] }}</dd>
+        {{ /if }}
+        {{ if $label == "organisation" }}
+            <dt>Organisation:</dt><dd>{{ $profile['organisation'] }}</dd>
+        {{ /if }}
+        {{ if $label == "gender" }}
+            <dt>Gender:</dt><dd>{{  $profile['gender'] }}</dd>
+        {{ /if }}
     {{ /if }}
+    {{ /foreach }}
+
+    {{ if  !empty($profile['facebook']) }}
+        <a rel="nofollow" target="_blank" href="http://facebook.com/{{ $profile['facebook'] }}"><img src="{{ url static_file='_img/icons/fb.png' }}" alt="Facebook"> </a>&nbsp;
     {{ /if }}
-    {{ /foreach *}}
-    <dd>{{ $profile['bio'] }}</dd>
-    <dd><b>{{ #birthday# }}:</b> {{ $profile['birth_date'] }}</dd>
- 	 <dd><b>{{ #gender# }}:</b> {{ $profile['gender'] }}</dd>
-    <dd><b>{{ #organisation# }}:</b> {{ $profile['organisation']}}</dd>
-    <dd><b>{{ #website# }}:</b> <a class="link-color" href="{{ $profile['website']}}" target="_blank" rel="nofollow">{{ $profile['website']|escape}}</a></dd>
-    
-</dl>
+    {{ if  !empty($profile['twitter']) }}
+    <a rel="nofollow" target="_blank" href="http://twitter.com/{{ $profile['twitter'] }}"><img src="{{ url static_file='_img/icons/tw.png' }}" alt="Twitter"></a>&nbsp;
+    {{ /if }}
+
+    {{ if  !empty($profile['google']) }}
+    <a rel="nofollow" target="_blank" href="http://plus.google.com/{{ $profile['google'] }}/"><img src="{{ url static_file='_img/icons/gg.png' }}" alt="Google +"></a>&nbsp;
+    {{ /if }}
+
+    {{ if  !empty($profile['website']) }}
+    <a rel="nofollow" target="_blank"  href="http://{{ $profile['website']|escape:url }}">
+    <img src="{{ url static_file='_img/icons/ws.png' }}" alt="WebSite"></a>&nbsp;
+   
+   {{ if $profile['email_public'] eq 1}}
+            <a rel="nofollow" href="mailto:{{ $user->email }}"><img src="{{ url static_file='_img/icons/em.png' }}" alt="Email"></a><br>
+        {{ /if }}
+    {{ /if }}
+</dl> 
 
 
 

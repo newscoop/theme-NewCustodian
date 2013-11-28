@@ -110,7 +110,9 @@ strong {
 }
 
 blockquote {
-    margin: 1em 40px;
+    border-left:10px solid #F2F2F2;
+    padding-left:10px;
+    margin:0px;
 }
 
 /*
@@ -444,7 +446,7 @@ html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-ul, ol { margin-left: 2em; }
+
 ol { list-style-type: decimal; }
 
 /* Remove margins for navigation lists */
@@ -1232,7 +1234,10 @@ aside h4 {
 aside p, #sidebar p, aside dl.profile, #sidebar dl.profile {
 	font-size: 0.875em;
 	}
-	
+	dl.profile a img
+  {
+    width:30px;
+  }
 	
 #author-box article {
 	margin: 10px 0 16px;
@@ -2155,4 +2160,18 @@ nav:before, nav:after {
 			font-family: UnitSlabWeb-Bold, Georgia, "Times New Roman", Times, serif;
 			}	
 		
-	p.poll-info {text-align: left; margin-bottom: 10px; font-size: 15px; display: block;}			
+	p.poll-info {text-align: left; margin-bottom: 10px; font-size: 15px; display: block;}	
+
+
+
+  /***TEST STYLE FOR TABLE***/
+  .art-item .clearfix table {box-shadow:0 1px 0 0 #FFFFFF; max-width:100%;width:100%;}
+  .art-item .clearfix table tr:first-child td:first-child{-webkit-border-top-left-radius: 2px;-moz-border-radius-topleft: 2px;border-top-left-radius: 2px;}
+  .art-item .clearfix table tr:first-child td:last-child{-webkit-border-top-right-radius: 2px;-moz-border-radius-topright: 2px;border-top-right-radius: 2px;}
+  .art-item .clearfix table tr:last-child td:last-child{-webkit-border-bottom-right-radius: 2px;-moz-border-radius-bottomright: 2px;border-bottom-right-radius: 2px;}
+  .art-item .clearfix table tr:last-child td:first-child{-webkit-border-bottom-left-radius: 2px;-moz-border-radius-bottomleft: 2px;border-bottom-left-radius: 2px;}
+  .art-item .clearfix table tr td{padding:7px;border-left:1px solid #DDDDDD;border-top:1px solid #DDDDDD;}
+  .art-item .clearfix table tr td:last-child{border-right:1px solid #DDDDDD;}
+  .art-item .clearfix table tr:last-child td{border-bottom:1px solid #DDDDDD;}
+  .art-item .clearfix table tbody > tr:nth-child(2n+1) > td, .art-item .clearfix table tbody > tr:nth-child(2n+1) > th {background-color:#F2F2F2;}
+  /***TEST STYLE FOR TABLE***/
