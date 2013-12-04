@@ -1205,9 +1205,10 @@ footer {
 				margin:-12px 0 12px 0;
 				}
 p.cs_img_caption {
-	margin-top:-12px;
-	font-size:0.875em;
+	margin-top:-22px;
+	font-size:0.75em;
 	color:#636363;
+  font-style:italic;
 }
 				
 /* section page styles */

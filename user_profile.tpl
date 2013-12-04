@@ -33,7 +33,27 @@
     {{ /if }}
 </ul>
     </h5>
-  <p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }} {{ $user->posts_count }}</span></p>
+  <p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }}   
+
+  <!--List count article-->
+  {{ if $user->isAuthor() }}
+  {{ $escapedName=str_replace(" ", "\ ", $user->author->name) }}
+  {{ /if }}
+
+
+
+  {{ list_articles ignore_publication="true" ignore_issue="true" ignore_section="true" constraints="author is $escapedName type is news" order="bypublishdate desc" }}
+{{ if $gimme->current_list->at_beginning }}
+        {{ $gimme->current_list->count }}
+{{ /if }}
+
+{{ /list_articles }}
+ <!--List count article-->
+ </span> </p>
+
+
+ 
+
     
     <div class="user-profile-posts">
       {{ include file="_tpl/user-content.tpl" user=$user }}
@@ -61,7 +81,18 @@
         {{ /if }}
     </ul>
 </h5>
-<p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }} {{ $user->posts_count }}</span></p>
+<p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }} 
+
+
+{{ list_articles length="10" order="byPublishDate desc" }}
+
+{{ $gimme->article->name }}
+{{ /list_articles }}
+
+
+
+
+  </span></p>
 
 <dl class="profile">
     {{ foreach $profile as $label => $value }} 
