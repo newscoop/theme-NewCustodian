@@ -636,6 +636,176 @@ ul#secnav li {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Language styles */
+
+.top_links {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-top: 4px;
+}
+
+.top_links ul {
+  margin: 0px;
+  padding-left: 5px;
+}
+
+.top_links li, .top_links a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  list-style: none;
+}
+
+.top_links a:after {
+  content: "  ";
+}
+
+.language_menu {
+  float: right;
+  list-style: none;
+  z-index: 999;
+}
+
+.language_menu a {
+  padding-left: 5px;
+  margin-right: 10px;
+}
+
+.language_menu > a:after {
+  content: url('../_img/arrow_down.png');
+  margin-left: 5px;
+  position: absolute;
+  margin-top: -2px;
+}
+
+.language_menu ul{
+  display: none;
+  z-index: 999;
+  padding-left: 0px;
+}
+
+
+.language_menu:hover ul {
+  padding-bottom: 5px;
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  padding: 5px 30px 10px 2px;
+  border: 1px solid #d3d3d3;
+  border-top: none;
+}
+
+.trigger_page {
+  display: none;
+}
+
+#secnav li {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+
+@media handheld, only screen and (max-width: 640px) {
+
+  #secnav {
+  display: inline-block !important;
+  width: 50%;
+  background-color: #F2F2F2;
+  position: absolute;
+  right: 0px;
+  border-bottom: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  }
+
+  #secnav li {
+    display: block;
+    float: none !important;
+    padding: 5px 0px;
+  }
+
+
+  /* Kako da skinem otvaranje menija na hover?
+    .language_menu a:hover + div {
+      display: none;
+    }
+  */
+
+  .trigger_page {
+    display: inline-block;
+  }
+
+  #secnav ul {
+    display: none;
+  }
+
+  #secnav.selected ul {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    padding: 5px 10px 10px 10px;
+    margin-top: 6px;
+    margin-left: -1px;
+    width: 100%;
+    left: 0px;
+    box-sizing: border-box;
+    z-index: 999;
+  }
+
+  .top_links {
+    margin-top: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .top_links ul {
+    border: 1px solid #d3d3d3;
+    border-top: none;
+  }
+
+  .top_links ul li {
+    padding: 5px 0px;
+  }
+
+  .language_menu {
+  width: 50%;
+  background-color: #F2F2F2;
+  padding: 5px 15px;
+  position: absolute;
+  left: 0px;
+  border-bottom: 1px solid #d3d3d3;
+  box-sizing: border-box;
+  }
+
+  .language_menu.selected ul {
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    padding: 5px 10px 10px 10px;
+    margin-top: 6px;
+    width: 100%;
+    right: 0px;
+    margin-right: -1px;
+    box-sizing: border-box;
+  }
+
+  header#global hgroup {
+    margin-top: 45px;
+  }
+  
+  .language_menu:hover ul {
+    display: none;
+  }
+  .language_menu.top_links.selected ul{
+    display: block !important;
+  }
+
+  .language_menu > a:after {
+    content: ' ';
+  }
+
+}
 div#search-box {
 	text-align: right;
 	padding: 0 32px 0 0;
