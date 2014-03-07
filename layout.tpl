@@ -53,7 +53,7 @@
     {{ /foreach }}
 
      {{ if $profile['email_public'] eq 1}}
-            <dt>Email:</dt><dd>{{ $user->email }}</dd>
+            <dt>Email:</dt><dd><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></dd>
     {{ /if }}
 
     {{ if  !empty($profile['facebook']) }}
