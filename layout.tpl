@@ -48,11 +48,13 @@
         {{ if $label == "gender" }}
             <dt>Gender:</dt><dd>{{  $profile['gender'] }}</dd>
         {{ /if }}
-        {{ if $profile['email_public'] eq 1}}
-            <dt>Email:</dt><dd>{{ $user->email }}</dd>
-        {{ /if }}
+       
     {{ /if }}
     {{ /foreach }}
+
+     {{ if $profile['email_public'] eq 1}}
+            <dt>Email:</dt><dd>{{ $user->email }}</dd>
+    {{ /if }}
 
     {{ if  !empty($profile['facebook']) }}
         <a rel="nofollow" target="_blank" href="http://facebook.com/{{ $profile['facebook'] }}"><img src="{{ url static_file='_img/icons/fb.png' }}" alt="Facebook"> </a>&nbsp;
