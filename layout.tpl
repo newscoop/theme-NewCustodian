@@ -48,6 +48,9 @@
         {{ if $label == "gender" }}
             <dt>Gender:</dt><dd>{{  $profile['gender'] }}</dd>
         {{ /if }}
+        {{ if $profile['email_public'] eq 1}}
+            <dt>Email:</dt><dd>{{ $user->email }}</dd>
+        {{ /if }}
     {{ /if }}
     {{ /foreach }}
 
@@ -65,10 +68,6 @@
     {{ if  !empty($profile['website']) }}
     <a rel="nofollow" target="_blank"  href="http://{{ $profile['website']|escape:url }}">
     <img src="{{ url static_file='_img/icons/ws.png' }}" alt="WebSite"></a>&nbsp;
-   
-   {{ if $profile['email_public'] eq 1}}
-            <a rel="nofollow" href="mailto:{{ $user->email }}"><img src="{{ url static_file='_img/icons/em.png' }}" alt="Email"></a><br>
-        {{ /if }}
     {{ /if }}
 </dl> 
 
