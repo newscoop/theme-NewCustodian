@@ -92,8 +92,9 @@
                     <div class="ninecol last">
                 	<h4>{{ if $gimme->author->user->defined }}<a href="{{ $view->url(['username' => $gimme->author->user->uname], 'user') }}">{{ /if }}{{ $gimme->author->name }}{{ if $gimme->author->user->defined }}</a>{{ /if }}</h4>
                   
-                	<p>{{ $gimme->author->biography->text|strip_tags }}</p>
-                  <p>test</p>
+                  <p>{{ $gimme->author->biography->text|strip_tags }}</p>
+                  <p>{{ $gimme->author->biography->text|strip_tags:false }}</p>
+                	<p>{{ $gimme->author->biography->text|strip_tags:true }}</p>
                     </div>
                 </article>
 
