@@ -27,6 +27,36 @@ $(document).ready(function(){
 
 
 
+/* Language Menu
+  -------------------------------------------------------*/
+
+
+  if( $(window).width() < 660) {
+      
+      function top_menu_drop(obj) {
+        if ( $(obj).hasClass("selected") ) {
+          $(obj).removeClass("selected");
+        }
+        else {
+           $(".top_links").removeClass("selected");
+           $(obj).addClass("selected");
+        }     
+      }
+
+      $(".top_links").click(function(e) {
+        top_menu_drop(this);
+      });
+
+      $(".top_links > a").click(function(e){
+          top_menu_drop($(this).parent());
+          return false;
+        });
+
+    };
+
+
+
+
 
 
 

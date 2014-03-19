@@ -1,4 +1,4 @@
-<script type='text/javascript'>
+
  
 $(document).ready(function() {
     
@@ -71,4 +71,3 @@ function set_votes(widget) {
     $(widget).find('.rating_error').text( error );
 }
  
-</script>

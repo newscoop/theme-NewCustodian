@@ -1,13 +1,31 @@
     <header id="global" class="row">
-            <ul id="secnav" class="clearfix right">
-            	 {{ local }}
-    				 {{ unset_topic }}
+
+     
+
+            <div id="secnav" class="clearfix right top_links">
+             
+                <a href="#" class="trigger_page">Pages</a>
+                <ul>
+                   {{ local }}
+             {{ unset_topic }}
                 {{ list_articles ignore_issue="true" ignore_section="true" constraints="issue is 1 section is 5"}}
                 <li><a href="{{ uri options="article" }}" title="{{ $gimme->article->name }}">{{ $gimme->article->name }}</a></li>
                 {{ /list_articles }} 
                 {{ /local }}         
                 <li><a href="{{ uri options="template archive.tpl" }}">{{ #archives# }}</a></li>
-            </ul><!-- /#secnav -->
+                </ul>
+            </div><!-- /#secnav -->
+
+              <div class="top_links language_menu">
+                   <a href="#">Language</a>
+                   <ul>
+                   <li><a title="English" href="#">English</a></li>
+                   <li><a title="German" href="#">Spanish</a></li>
+                   </ul>
+              </div>
+            
+ 
+ 
     
         <div class="row">
             <hgroup class="eightcol">
