@@ -2,8 +2,9 @@
   <header><ul>
     {{ if $user->isAuthor() }}
     <li><a href="#articles">{{ #articles# }}</a></li>
-    {{ /if }}
+   
     <li><a href="#usercomments">{{ #comments# }}</a></li>
+     {{ /if }}
   </ul></header>
   
   {{ if $user->isAuthor() }}
