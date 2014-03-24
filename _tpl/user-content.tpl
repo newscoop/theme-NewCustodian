@@ -1,9 +1,20 @@
 <article id="user-content">
   <header><ul>
     {{ if $user->isAuthor() }}
-    <li><a href="#articles">{{ #articles# }}</a></li>
+      {{ $escapedName=str_replace(" ", "\ ", $user->author->name) }}
+    <li><a href="#articles">{{ #articles# }}
+  {{ list_articles ignore_publication="true" ignore_issue="true" ignore_section="true" constraints="author is $escapedName type is news" order="bypublishdate desc" }}
+{{ if $gimme->current_list->at_beginning }}
+        ({{ $gimme->current_list->count }})
+{{ /if }}
+
+{{ /list_articles }}</a></li>
    
-    <li><a href="#usercomments">{{ #comments# }}</a></li>
+{{ list_user_comments user=$user->identifier order="bydate desc" length=1 }} 
+
+                          <li><a href="#usercomments">{{ #comments# }}  ({{ $user->posts_count }})</a></li>
+                          {{ assign var="commCount" value=$user->posts_count }}
+{{ /list_user_comments }} 
      {{ /if }}
   </ul></header>
   
