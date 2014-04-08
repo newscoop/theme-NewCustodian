@@ -55,10 +55,10 @@
   <link rel="stylesheet" href="{{ url static_file='_css/ui-lightness/jquery-ui.custom.css' }}" />
 {{ /if }}
 
-{{ if $gimme->template->name == "article.tpl" }}  
+
   <!-- styles for fancybox, used on article page -->
   <link rel="stylesheet" href="{{ url static_file='_css/fancybox/jquery.fancybox-1.3.4.css' }}" />    
-{{ /if }}
+
 
   <!-- Although all JavaScript is the bottom, Jquery needs to be here for Newscoop's Geolocation/Map functionality -->
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
