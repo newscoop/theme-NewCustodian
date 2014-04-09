@@ -48,6 +48,10 @@
         {{ if $label == "gender" }}
             <dt>Gender:</dt><dd>{{  $profile['gender'] }}</dd>
         {{ /if }}
+        {{ if $label == "website" }}
+            <dt>Website:</dt><dd><a rel="nofollow" target="_blank"  href="{{ $profile['website']|escape:url }}">
+    {{ $profile['website']|escape:url }}</a></dd>
+        {{ /if }}
        
     {{ /if }}
     {{ /foreach }}
@@ -67,10 +71,7 @@
     <a rel="nofollow" target="_blank" href="http://plus.google.com/{{ $profile['google'] }}/"><img src="{{ url static_file='_img/icons/gg.png' }}" alt="Google +"></a>&nbsp;
     {{ /if }}
 
-    {{ if  !empty($profile['website']) }}
-    <a rel="nofollow" target="_blank"  href="http://{{ $profile['website']|escape:url }}">
-    <img src="{{ url static_file='_img/icons/ws.png' }}" alt="WebSite"></a>&nbsp;
-    {{ /if }}
+    
 </dl> 
 
 
