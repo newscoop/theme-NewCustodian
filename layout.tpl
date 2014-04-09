@@ -49,8 +49,8 @@
             <dt>Gender:</dt><dd>{{  $profile['gender'] }}</dd>
         {{ /if }}
         {{ if $label == "website" }}
-            <dt>Website:</dt><dd><a rel="nofollow" target="_blank"  href="{{ $profile['website']|escape:url }}">
-    {{ $profile['website']|escape:url }}</a></dd>
+            <dt>Website:</dt><dd><a rel="nofollow" target="_blank"  href="http://{{ $profile['website'] }}">
+    {{ $profile['website'] }}</a></dd>
         {{ /if }}
        
     {{ /if }}
