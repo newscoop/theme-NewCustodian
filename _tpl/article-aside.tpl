@@ -39,16 +39,23 @@
             
 {{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
 
-            <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
-              <h3>{{ #watch# }}</h3>
-              <video id="video_{{ $gimme->current_list->index }}" class="video-js vjs-default-skin" controls
-                preload="auto" width="100%"
-                data-setup="{}">
-              <source src="{{ uri options="articleattachment" }}" type='{{ $gimme->attachment->mime_type }}'>
-              <a href="{{ uri options="articleattachment" }}">{{ #download# }} .{{ $gimme->attachment->extension }} {{ #file# }}</a>
-             </video>
 
-      </div><!-- /#video-attachment --> 
+{{ if $hasvideo == true }}
+<div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
+  <h5 id="video-cont-label"><i class="icon-film"></i> {{ #watch# }}</h5><hr>
+    <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
+      <video >
+        {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
+        <source src="{{ $videoSource }}" type='video/{{if $extension == flv }}flash{{ elseif $extension == ogv}}ogg{{ else }}{{ $extension }}{{ /if }}'>
+        {{/foreach}}
+      </video>
+    </div>
+    {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
+    <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $extension }}</a>
+    {{/foreach}}
+</div><!-- /#video-attachment --> 
+{{ /if }}
+
       
 {{ else }}
 
