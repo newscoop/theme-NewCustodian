@@ -55,10 +55,7 @@
   <link rel="stylesheet" href="{{ url static_file='_css/ui-lightness/jquery-ui.custom.css' }}" />
 {{ /if }}
 
-{{ if $gimme->template->name == "article.tpl" }}  
-    <link href="{{ url static_file='_css/flowplayer_skin/minimalist.css' }}" rel="stylesheet">
-    <script src="{{ url static_file='_js/vendor/flowplayer/flowplayer.min.js' }}"></script>
-{{ /if }}
+
 
   <!-- styles for fancybox, used on article page -->
   <link rel="stylesheet" href="{{ url static_file='_css/fancybox/jquery.fancybox-1.3.4.css' }}" />    
@@ -76,6 +73,10 @@
   <link href="{{ url static_file="_css/video-js.css" }}" rel="stylesheet">
   <script src="{{ url static_file="_js/video.js" }}"></script>
 
+  {{ if $gimme->template->name == "article.tpl" }}  
+    <link href="{{ url static_file='_css/flowplayer_skin/minimalist.css' }}" rel="stylesheet">
+    <script src="{{ url static_file='_js/vendor/flowplayer/flowplayer.min.js' }}"></script>
+{{ /if }}
   <!-- picturefill -->
   <script src="{{ url static_file="_js/matchmedia.js" }}"></script>
   <script src="{{ url static_file="_js/picturefill.js" }}"></script>
