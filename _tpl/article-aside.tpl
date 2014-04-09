@@ -33,7 +33,7 @@
 {{ list_article_attachments }}
 {{ if $gimme->attachment->extension == oga || $gimme->attachment->extension == mp3 || $gimme->attachment->extension == MP3  }}          
 <div class="audio-attachment">
-  <h3> {{ #listen# }}</h3><hr>
+  <h3> {{ #listen# }}</h3>
     <audio src="{{ uri options="articleattachment" }}" controls></audio><br>
     <a class="btn btn-mini btn-red" href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }} | {{ $gimme->attachment->extension }}</a>
 </div><!-- /#audio-attachment -->
@@ -53,7 +53,7 @@
 
 {{ if $hasvideo == true }}
 <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
-  <h3> {{ #watch# }}</h3><hr>
+  <h3> {{ #watch# }}</h3>
     <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
       <video >
         {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
