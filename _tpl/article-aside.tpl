@@ -40,7 +40,7 @@
 {{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
 
 
-{{ if $hasvideo == true }}
+
 <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
   <h5 id="video-cont-label"><i class="icon-film"></i> {{ #watch# }}</h5><hr>
     <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
@@ -54,7 +54,7 @@
     <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $extension }}</a>
     {{/foreach}}
 </div><!-- /#video-attachment --> 
-{{ /if }}
+
 
       
 {{ else }}

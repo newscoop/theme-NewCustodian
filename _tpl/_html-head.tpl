@@ -53,6 +53,8 @@
 {{ if !($gimme->template->name == "article.tpl") }}  
   <!-- styles for sidebar tabs - jquery ui custom build package; not needed on article page -->
   <link rel="stylesheet" href="{{ url static_file='_css/ui-lightness/jquery-ui.custom.css' }}" />
+    <link href="{{ url static_file='_css/flowplayer_skin/minimalist.css' }}" rel="stylesheet">
+    <script src="{{ url static_file='_js/vendor/flowplayer/flowplayer.min.js' }}"></script>
 {{ /if }}
 
 
