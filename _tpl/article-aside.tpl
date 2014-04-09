@@ -26,21 +26,32 @@
 {{ /if }}
 
 {{* here we work with article attachments. .oga and .ogv/.ogg files is automatically shown with player in html5 enabled browsers (for video we are including videojs.com's HTML5 player which also plays mp4 and webm formats), all other cases just build the link for download *}}           
+
+<!--attachmant-->
 {{ if $gimme->article->has_attachments }} 
+{{assign var=hasvideo value=0}}
 {{ list_article_attachments }}
-{{ if $gimme->attachment->extension == oga }}           
+{{ if $gimme->attachment->extension == oga || $gimme->attachment->extension == mp3 || $gimme->attachment->extension == MP3  }}          
+<div class="audio-attachment">
+  <h5><i class="icon-headphones"></i> {{ #listen# }}</h5><hr>
+    <audio src="{{ uri options="articleattachment" }}" controls></audio><br>
+    <a class="btn btn-mini btn-red" href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }} | {{ $gimme->attachment->extension }}</a>
+</div><!-- /#audio-attachment -->
+{{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == flv || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
+    {{append var=videosources value="{{ uri options="articleattachment" }}" index="`$gimme->attachment->extension`"}}
+    {{assign var = hasvideo value = true}}
+{{ else }}
+<div class="attachment">
+    <h5><i class="icon-download-alt"></i> {{ #attachment# }}</h5><hr>
+    <a href="{{ uri options="articleattachment" }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
+    <p><em>{{ $gimme->attachment->description }}</em></p>
+</div><!-- /.attachment -->
+{{ /if }}
 
-            <div class="audio-attachment">
-              <h3>{{ #listen# }}</h3>
-                <audio src="{{ uri options="articleattachment" }}" width="100%" controls>
-              <a href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }}</a>
-              </audio>
-            </div><!-- /#audio-attachment -->
-            
-{{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
+{{ /list_article_attachments }}      
+{{ /if }}  
 
-
-
+{{ if $hasvideo == true }}
 <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
   <h5 id="video-cont-label"><i class="icon-film"></i> {{ #watch# }}</h5><hr>
     <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
@@ -54,20 +65,13 @@
     <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $extension }}</a>
     {{/foreach}}
 </div><!-- /#video-attachment --> 
+{{ /if }}
+<!--attachmant-->
 
 
-      
-{{ else }}
 
-      <div class="attachment">
-          <h3>{{ #download# }}</h3>
-          <p>{{ #fileOfType# }} {{ $gimme->attachment->mime_type }}</p>
-          <a href="{{ uri options="articleattachment" }}">{{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
-          <p><em>{{ $gimme->attachment->description }}</em></p>
-      </div><!-- /.attachment -->
-{{ /if }}      
-{{ /list_article_attachments }}      
-{{ /if }}                 
+
+
 
 {{ /if }}{{* end of $gimme->article->content_accessible *}}
 
