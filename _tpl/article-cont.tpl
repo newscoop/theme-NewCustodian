@@ -24,6 +24,8 @@
                 <div class="clearfix">{{ include file="_tpl/_edit-article.tpl" }}{{ $gimme->article->full_text }}</div>
             </article>
 
+<div style="float:left"><a href="{{ uri options="all_subtitles full_text" }}">View entire article</a></div>
+<div style="float:right">{{ if $gimme->article->full_text->has_previous_subtitles }}     <a href="{{ uri options="previous_subtitle full_text" }}">Previous</a> {{ else }}     Previous {{ /if }} | {{ if $gimme->article->full_text->has_next_subtitles }}     <a href="{{ uri options="next_subtitle full_text" }}">Next</a> {{ else }}     Next {{ /if }}</div>
     {{ if $gimme->article->type_name !== "page" }}
             <div id="social-group">
                 <div id="twitter">
@@ -36,3 +38,5 @@
 {{ else }}        
             <p>{{ #infoOnLockedArticles# }}</p>    
 {{ /if }}
+
+
