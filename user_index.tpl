@@ -29,7 +29,7 @@
     <li><figure>
         	<a href="{{ $view->url(['username' => $user->uname], 'user') }}"><img src="{{ include file="_tpl/user-image.tpl" user=$user width=50 height=50 }}" /></a>
         </figure>
-        <h5><a href="{{ $view->url(['username' => $user->uname], 'user') }}">{{ $user->uname }}</a><small>  <p class="date">member from {{ $user->created }}</p></small></h5>
+        <h5><a href="{{ $view->url(['username' => $user->uname], 'user') }}">{{ $user->uname }}</a><small> Member since {{ $user->created }}</small></h5>
         <p>{{ if !empty($user['bio']) }}{{ $user['bio']|escape|truncate:100 }}{{ else }}...{{ /if }}</p>
     </li>
     {{ /foreach }}
