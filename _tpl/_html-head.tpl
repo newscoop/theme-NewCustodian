@@ -69,10 +69,6 @@
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="{{ url static_file='_js/libs/modernizr-1.7.min.js' }}"></script>
 
-  <!-- Video.js -->
-  <link href="{{ url static_file="_css/video-js.css" }}" rel="stylesheet">
-  <script src="{{ url static_file="_js/video.js" }}"></script>
-
   {{ if $gimme->template->name == "article.tpl" }}  
     <link href="{{ url static_file='_css/flowplayer_skin/minimalist.css' }}" rel="stylesheet">
     <script src="{{ url static_file='_js/vendor/flowplayer/flowplayer.min.js' }}"></script>

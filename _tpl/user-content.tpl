@@ -2,7 +2,7 @@
   <header><ul>
     {{ if $user->isAuthor() }}
       {{ $escapedName=str_replace(" ", "\ ", $user->author->name) }}
-    <li><a href="#articles">{{ #userPosts# }}
+    <li><a href="#articles">{{ #articles# }}
   {{ list_articles ignore_publication="true" ignore_issue="true" ignore_section="true" constraints="author is $escapedName type is news" order="bypublishdate desc" }}
 {{ if $gimme->current_list->at_beginning }}
         ({{ $gimme->current_list->count }})
