@@ -55,10 +55,11 @@
   <link rel="stylesheet" href="{{ url static_file='_css/ui-lightness/jquery-ui.custom.css' }}" />
 {{ /if }}
 
-{{ if $gimme->template->name == "article.tpl" }}  
+
+
   <!-- styles for fancybox, used on article page -->
   <link rel="stylesheet" href="{{ url static_file='_css/fancybox/jquery.fancybox-1.3.4.css' }}" />    
-{{ /if }}
+
 
   <!-- Although all JavaScript is the bottom, Jquery needs to be here for Newscoop's Geolocation/Map functionality -->
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
@@ -68,10 +69,10 @@
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="{{ url static_file='_js/libs/modernizr-1.7.min.js' }}"></script>
 
-  <!-- Video.js -->
-  <link href="{{ url static_file="_css/video-js.css" }}" rel="stylesheet">
-  <script src="{{ url static_file="_js/video.js" }}"></script>
-
+  {{ if $gimme->template->name == "article.tpl" }}  
+    <link href="{{ url static_file='_css/flowplayer_skin/minimalist.css' }}" rel="stylesheet">
+    <script src="{{ url static_file='_js/vendor/flowplayer/flowplayer.min.js' }}"></script>
+{{ /if }}
   <!-- picturefill -->
   <script src="{{ url static_file="_js/matchmedia.js" }}"></script>
   <script src="{{ url static_file="_js/picturefill.js" }}"></script>

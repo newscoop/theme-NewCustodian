@@ -26,41 +26,52 @@
 {{ /if }}
 
 {{* here we work with article attachments. .oga and .ogv/.ogg files is automatically shown with player in html5 enabled browsers (for video we are including videojs.com's HTML5 player which also plays mp4 and webm formats), all other cases just build the link for download *}}           
+
+<!--attachmant-->
 {{ if $gimme->article->has_attachments }} 
+{{assign var=hasvideo value=0}}
 {{ list_article_attachments }}
-{{ if $gimme->attachment->extension == oga }}           
-
-            <div class="audio-attachment">
-              <h3>{{ #listen# }}</h3>
-                <audio src="{{ uri options="articleattachment" }}" width="100%" controls>
-              <a href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }}</a>
-              </audio>
-            </div><!-- /#audio-attachment -->
-            
-{{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
-
-            <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
-              <h3>{{ #watch# }}</h3>
-              <video id="video_{{ $gimme->current_list->index }}" class="video-js vjs-default-skin" controls
-                preload="auto" width="100%"
-                data-setup="{}">
-              <source src="{{ uri options="articleattachment" }}" type='{{ $gimme->attachment->mime_type }}'>
-              <a href="{{ uri options="articleattachment" }}">{{ #download# }} .{{ $gimme->attachment->extension }} {{ #file# }}</a>
-             </video>
-
-      </div><!-- /#video-attachment --> 
-      
+{{ if $gimme->attachment->extension == oga || $gimme->attachment->extension == mp3 || $gimme->attachment->extension == MP3  }}          
+<div class="audio-attachment">
+  <h3> {{ #listen# }}</h3>
+    <audio src="{{ uri options="articleattachment" }}" controls></audio><br>
+    <a class="btn btn-mini btn-red" href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }} | {{ $gimme->attachment->extension }}</a>
+</div><!-- /#audio-attachment -->
+{{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == flv || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
+    {{append var=videosources value="{{ uri options="articleattachment" }}" index="`$gimme->attachment->extension`"}}
+    {{assign var = hasvideo value = true}}
 {{ else }}
+<div class="attachment">
+    <h5><i class="icon-download-alt"></i> {{ #attachment# }}</h5><hr>
+    <a href="{{ uri options="articleattachment" }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
+    <p><em>{{ $gimme->attachment->description }}</em></p>
+</div><!-- /.attachment -->
+{{ /if }}
 
-      <div class="attachment">
-          <h3>{{ #download# }}</h3>
-          <p>{{ #fileOfType# }} {{ $gimme->attachment->mime_type }}</p>
-          <a href="{{ uri options="articleattachment" }}">{{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
-          <p><em>{{ $gimme->attachment->description }}</em></p>
-      </div><!-- /.attachment -->
-{{ /if }}      
 {{ /list_article_attachments }}      
-{{ /if }}                 
+{{ /if }}  
+
+{{ if $hasvideo == true }}
+<div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
+  <h3> {{ #watch# }}</h3>
+    <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
+      <video >
+        {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
+        <source src="{{ $videoSource }}" type='video/{{if $extension == flv }}flash{{ elseif $extension == ogv}}ogg{{ else }}{{ $extension }}{{ /if }}'>
+        {{/foreach}}
+      </video>
+    </div>
+    {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
+    <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $extension }}</a>
+    {{/foreach}}
+</div><!-- /#video-attachment --> 
+{{ /if }}
+<!--attachmant-->
+
+
+
+
+
 
 {{ /if }}{{* end of $gimme->article->content_accessible *}}
 
@@ -92,7 +103,7 @@
                     <div class="ninecol last">
                 	<h4>{{ if $gimme->author->user->defined }}<a href="{{ $view->url(['username' => $gimme->author->user->uname], 'user') }}">{{ /if }}{{ $gimme->author->name }}{{ if $gimme->author->user->defined }}</a>{{ /if }}</h4>
                   
-                  <p>{{ $gimme->author->biography->text|strip_tags|escape:'html' }}</p>
+                  <p>{{ $gimme->author->biography->text|html_entity_decode}}</p>
   
                     </div>
                 </article>

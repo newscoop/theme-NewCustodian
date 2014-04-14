@@ -16,7 +16,7 @@
                 <a href="http://{{ $gimme->publication->site }}/user/profile/{{ $gimme->comment->user->uname|urlencode }}">{{ $gimme->comment->user->uname }}</a>
             {{ else }}
                 {{ $gimme->comment->nickname }} {{ #anonymous# }}
-            {{ /if }}</b>{{ /list_article_comments }} on <a href="{{ uri options="article" }}">{{ $gimme->article->name }}</a></li>
+            {{ /if }}</b>{{ /list_article_comments }} on <a href="{{ uri options="article" }}#comments">{{ $gimme->article->name }}</a></li>
 
 {{ /list_articles }}
                         

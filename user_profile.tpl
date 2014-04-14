@@ -33,23 +33,7 @@
     {{ /if }}
 </ul>
     </h5>
-  <p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }}   
-
-  <!--List count article-->
-  {{ if $user->isAuthor() }}
-  {{ $escapedName=str_replace(" ", "\ ", $user->author->name) }}
-  {{ /if }}
-
-
-
-  {{ list_articles ignore_publication="true" ignore_issue="true" ignore_section="true" constraints="author is $escapedName type is news" order="bypublishdate desc" }}
-{{ if $gimme->current_list->at_beginning }}
-        {{ $gimme->current_list->count }}
-{{ /if }}
-
-{{ /list_articles }}
- <!--List count article-->
- </span> </p>
+  <p class="date">member from {{ $user->created }}</p>
 
 
  

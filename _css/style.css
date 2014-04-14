@@ -1860,7 +1860,9 @@ aside .profile dt, aside .profile dd,
 			padding:16px 0 0 0 !important;
 			}
 			
-
+#usercomments ul {padding:0px!important;}
+#usercomments ul li ul li.commentar {margin-bottom: 20px;border-bottom: 1px dotted #cdcdcd;padding-bottom: 20px;}
+#usercomments ul li ul li.commentar {margin-top:5px;}
 .item-list {
 	list-style-type:none;
 	margin:0;

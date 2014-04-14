@@ -29,25 +29,7 @@
     <li><figure>
         	<a href="{{ $view->url(['username' => $user->uname], 'user') }}"><img src="{{ include file="_tpl/user-image.tpl" user=$user width=50 height=50 }}" /></a>
         </figure>
-        <h5><a href="{{ $view->url(['username' => $user->uname], 'user') }}">{{ $user->uname }}</a><small>( 
-
-          <!--List count article-->
-  {{ if $user->isAuthor() }}
-  {{ $escapedName=str_replace(" ", "\ ", $user->author->name) }}
-  {{ /if }}
-
-
-
-  {{ list_articles ignore_publication="true" ignore_issue="true" ignore_section="true" constraints="author is $escapedName type is news" order="bypublishdate desc" }}
-{{ if $gimme->current_list->at_beginning }}
-        {{ $gimme->current_list->count }}
-{{ /if }}
-
-{{ /list_articles }}
- <!--List count article-->
-
-
-         {{ #posts# }})</small></h5>
+        <h5><a href="{{ $view->url(['username' => $user->uname], 'user') }}">{{ $user->uname }}</a><small> Member since {{ $user->created }}</small></h5>
         <p>{{ if !empty($user['bio']) }}{{ $user['bio']|escape|truncate:100 }}{{ else }}...{{ /if }}</p>
     </li>
     {{ /foreach }}

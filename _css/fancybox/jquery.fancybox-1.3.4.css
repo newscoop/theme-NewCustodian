@@ -82,7 +82,37 @@
 	z-index: 1102;
 	border: 0px solid #fff;
 }
-
+#fancybox-content div .popup-form h2 {
+  margin-bottom:10px;
+}
+#fancybox-content div .popup-form ul  {
+  margin-left:0px
+}
+#fancybox-content div .popup-form li  {
+  list-style: none;
+  margin-bottom: 10px;
+}
+#fancybox-content div .popup-form select  {
+  border: 1px solid #444;
+  padding: 2px 10px;
+}
+#fancybox-content div .popup-form input[type="text"]  {
+  border: 1px solid #444;
+  width: 268px;
+  padding: 3px;
+}
+#fancybox-content div .popup-form input[type="submit"]  {
+  float:right;
+}
+#fancybox-content div .popup-form textarea {
+  border: 1px solid #444;
+  width: 268px;
+  padding: 3px;
+}
+#fancybox-content div .popup-form label {
+  float: left;
+  min-width: 100px;
+}
 #fancybox-hide-sel-frame {
 	position: absolute;
 	top: 0;
