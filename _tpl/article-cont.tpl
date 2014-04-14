@@ -22,6 +22,31 @@
                 {{ /if }}
                 {{ count }}
                 <div class="clearfix">{{ include file="_tpl/_edit-article.tpl" }}{{ $gimme->article->full_text }}</div>
+
+                <div>
+                   {{ if $gimme->article->subtitles_count(full_text) gt 1 }}
+
+            <ul class="pagination">
+            {{ list_subtitles field_name="full_text" }}
+{{ if $gimme->current_list->at_beginning }}
+{{ if $gimme->article->full_text->has_previous_subtitles }}
+    <li class="prev"><a href="{{ url options="previous_subtitle full_text" }}">Previous</a></li>
+{{ /if }}
+{{ /if }}
+
+<li{{ if ($gimme->article->current_subtitle_no(full_text)+1) == $gimme->current_list->index }} class="selected"{{ /if }}><a href="{{ url }}" title="{{ $gimme->subtitle->name }}">{{ $gimme->current_list->index }}</a></li>
+
+{{ if $gimme->current_list->at_end }}
+{{ if $gimme->article->full_text->has_next_subtitles }}
+    <li class="next"><a href="{{ url options="next_subtitle full_text" }}">Next</a></li>
+{{ /if }}
+{{ /if }}
+
+            {{ /list_subtitles }}
+            </ul>
+
+{{ /if }}
+                </div>
             </article>
 
     {{ if $gimme->article->type_name !== "page" }}
