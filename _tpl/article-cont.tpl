@@ -18,7 +18,19 @@
                 
                 {{ if $gimme->article->type_name == "news" }}
                 <!-- if you want to use responsive images use {{ include file="_tpl/img/img_picturefill.tpl" }} -->
+                <!--add subhead-->
+                {{ if $gimme->article->subtitles_count(full_text) gt 1 }} 
+                    {{ list_subtitles field_name="full_text" }}
+                        {{ if $gimme->current_list->at_beginning }}
+                        {{ if !($gimme->article->full_text->has_previous_subtitles) }}
+                        {{ include file="_tpl/img/img_600x400.tpl" }} 
+                        {{ /if }}
+                        {{ /if }}
+                    {{ /list_subtitles }}
+                {{ else }} 
                 {{ include file="_tpl/img/img_600x400.tpl" }}
+                {{ /if }}
+                <!--add subhead-->
                 {{ /if }}
                 {{ count }}
                 <div class="clearfix">{{ include file="_tpl/_edit-article.tpl" }}{{ $gimme->article->full_text }}</div>
@@ -41,7 +53,7 @@
 
 <div>
                    {{ if $gimme->article->subtitles_count(full_text) gt 1 }}
-
+<a href="{{ uri options="all_subtitles full_text" }}">View entire article</a> 
             <ul class="pagination">
             {{ list_subtitles field_name="full_text" }}
 {{ if $gimme->current_list->at_beginning }}
