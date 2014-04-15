@@ -1,7 +1,7 @@
 <h1>{{ $gimme->issue->name }}</h1>
 <div class="issue-content">
 {{ list_sections }}  
-{{ list_articles }}
+{{ list_articles constraints="type not poll" }}
 {{ if $gimme->current_articles_list->at_beginning }}
 
 
