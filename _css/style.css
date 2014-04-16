@@ -1217,7 +1217,9 @@ p.cs_img_caption {
    font-family: Arial, Helvetica, sans-serif; 
    margin: 0; 
    line-height: 1.15em; 
-   color:#464646; }
+   color:#464646; 
+   border-bottom: 3px solid #aaaaaa;
+   padding: 0 0 3px 0;
 
 }			
 /* section page styles */

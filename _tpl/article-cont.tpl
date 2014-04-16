@@ -55,7 +55,7 @@
                    {{ if $gimme->article->subtitles_count(full_text) gt 1 }}
 
             <ul class="pagination">
-            <li><a href="{{ uri options="all_subtitles full_text" }}">View entire article</a> </li>
+            <li><a href="{{ uri options="all_subtitles full_text" }}">Read article on one page</a> </li>
             {{ list_subtitles field_name="full_text" }}
 {{ if $gimme->current_list->at_beginning }}
 {{ if $gimme->article->full_text->has_previous_subtitles }}
