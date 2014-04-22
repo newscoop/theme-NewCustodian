@@ -33,7 +33,7 @@
     {{ /if }}
 </ul>
     </h5>
-  <p class="date">member from {{ $user->created }}</p>
+  <p class="date">Member since {{ $user->created }}</p>
 
 
  
