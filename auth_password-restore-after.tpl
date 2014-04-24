@@ -1,6 +1,6 @@
-{{ extends file="layout.tpl" }}
+{{extends file="layout.tpl"}}
 
-{{ block content }}
+{{block content}}
 {{ assign var="userindex" value=1 }}
 <header>
 	<h3>{{ #userAccount# }}</h3>
@@ -10,4 +10,4 @@
     <p>{{ #pleaseCheckInbox# }}</p>
 </div>
 
-{{ /block }}
+{{/block}}
